@@ -114,62 +114,7 @@ class cube {
 
             int return_code = cube_rotation(series_turning, index, side);
             return return_code;
-        }
-
-        int left_turn () {
-            // displacing  green_side
-            int green_temp[9];
-            for (int i = 0; i < 9; i++){
-                green_temp[i] = cube_box[green][(i + 3) % 9];
-            }
-            for (int i  = 0; i<9; i++){
-                cube_box[green][i] = green_temp[i];
-            }
-            int series_turing[4] = { white,  orange,  yellow, red};
-            int temp [3] = {cube_box [series_turing[0]][0], cube_box [series_turing[0]][3],cube_box [series_turing[0]][6]};
-            int new_temp[3];
-            for ( int  i = 1; i <= 4; i++){
-                new_temp[0] = cube_box[series_turing[i % 4]][0];
-                cube_box[series_turing[i % 4]][0] = temp[0];
-                temp[0] = new_temp[0];
-                new_temp[1] = cube_box[series_turing[i % 4]][3];
-                cube_box[series_turing[i % 4]][3] = temp[1];
-                temp[1] = new_temp[1];
-                new_temp[2] = cube_box[series_turing[i % 4]][6];
-                cube_box[series_turing[i % 4]][6] = temp[2];
-                temp[2] = new_temp[2];
-            }
-            return 0;
-        }
-
-        int right_turn () {
-            // displacing  green_side
-            int blue_temp[9];
-            for (int i = 0; i < 9; i++){
-                blue_temp[i] = cube_box[blue][(i + 3) % 9];
-            }
-            for (int i  = 0; i<9; i++){
-                cube_box[blue][i] = blue_temp[i];
-            }
-
-            int series_turing[4] = { white,  orange,  yellow, red};
-            int temp [3] = {cube_box [series_turing[0]][2], cube_box [series_turing[0]][5],cube_box [series_turing[0]][8]};
-            int new_temp[3];
-            for ( int  i = 1; i <= 4; i++){
-                new_temp[0] = cube_box[series_turing[i % 4]][2];
-                cube_box[series_turing[i % 4]][2] = temp[0];
-                temp[0] = new_temp[0];
-                new_temp[1] = cube_box[series_turing[i % 4]][5];
-                cube_box[series_turing[i % 4]][5] = temp[1];
-                temp[1] = new_temp[1];
-                new_temp[2] = cube_box[series_turing[i % 4]][8];
-                cube_box[series_turing[i % 4]][8] = temp[2];
-                temp[2] = new_temp[2];
-            }
-            return 0;
-        }
-    
-
+        }   
 };
 
 int main () {
